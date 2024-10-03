@@ -8,7 +8,7 @@ export const CartProducts: React.FC = () => {
         async function fetchProducts() {
             const products = await getCartProducts()
             setProducts(products);
-        }
+        } 
         fetchProducts();
     }, []);
 
