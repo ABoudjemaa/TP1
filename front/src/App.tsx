@@ -1,4 +1,5 @@
 import { CartComponent } from './components/CartComponent'
+import { CartProducts } from './components/CartProducts'
 import { ProductComponent } from './components/ProductComponent'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <div className='bg-red-500 text-white'>
       <ProductComponent />
+      <CartProducts/>
       <CartComponent />
     </div>
   )

@@ -1,6 +1,6 @@
 // frontend/src/components/CartComponent.tsx
 import React, { useState, useEffect } from 'react';
-import { getCartProducts, getCartTotal } from '../services/CartService';
+import { getCartTotal } from '../services/CartService';
 
 export const CartComponent: React.FC = () => {
     const [total, setTotal] = useState<number>(0);
@@ -8,12 +8,10 @@ export const CartComponent: React.FC = () => {
     useEffect(() => {
         async function fetchTotal() {
             const totalPrice = await getCartTotal();
-            const products = await getCartProducts()
-            console.log(products);
             setTotal(totalPrice);
         }
         fetchTotal();
     }, []);
 
-    return <div>Total du panier: {total} €</div>;
+    return <h2>Total du panier: {total} €</h2>;
 };
